@@ -1,0 +1,26 @@
+{
+  "name": "component-generator",
+  "version": "0.1.0",
+  "description": "CLI to generate files based on your project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generator": "plop --plopfile src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmitMirgal/component-generator.git"
+  },
+  "keywords": [],
+  "author": "Amit Mirgal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AmitMirgal/component-generator/issues"
+  },
+  "homepage": "https://github.com/AmitMirgal/component-generator.git#readme",
+  "devDependencies": {
+    "inquirer-select-directory": "^1.2.0",
+    "minimist": "^1.2.5",
+    "plop": "^2.7.4"
+  }
+}
