@@ -20,7 +20,6 @@
   "homepage": "https://github.com/AmitMirgal/component-generator.git#readme",
   "devDependencies": {
     "inquirer-select-directory": "^1.2.0",
-    "minimist": "^1.2.5",
     "plop": "^2.7.4"
   }
 }

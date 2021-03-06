@@ -19,3 +19,9 @@ npm install
 npm run generator
 
 ```
+
+## Motivation and Context
+
+I've inspired from the bala's blog and realize that it's a good idea to automate the templates. He has explained in details in his blog.
+
+[Balavishnuvj Blog](https://balavishnuvj.com/blog/building-your-own-component-generator/)

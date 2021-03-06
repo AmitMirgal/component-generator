@@ -11,7 +11,7 @@ const promptDirectory = require("inquirer-select-directory");
 
 let gitUserName = "No Author";
 
-exec("git config user.name", (error, stdout) => {
+exec("git config user.name", (_, stdout) => {
   const username = stdout.replace("/\r?\n|\r/g", "").trim();
   if (username) {
     gitUserName = username;
@@ -41,9 +41,9 @@ const componentGenerator = {
     },
     {
       type: "confirm",
-      name: "wantUtils",
+      name: "wantStory",
       default: true,
-      message: "Do you want utils?",
+      message: "Do you want story?",
     },
   ],
   actions: (data) => {
@@ -52,7 +52,7 @@ const componentGenerator = {
     const actions = [
       {
         type: "add",
-        path: `${data.componentDir}/{{properCase name}}/{{properCase name}}.component.jsx`,
+        path: `${data.componentDir}/{{properCase name}}/{{properCase name}}.jsx`,
         templateFile: "../templates/component.hbs",
         abortOnFail: true,
       },
@@ -66,24 +66,16 @@ const componentGenerator = {
     if (data.wantTests) {
       actions.push({
         type: "add",
-        path: `${data.componentDir}/{{properCase name}}/__tests__/{{properCase name}}.component.spec.js`,
+        path: `${data.componentDir}/{{properCase name}}/__tests__/{{properCase name}}.test.js`,
         templateFile: "../templates/component.test.hbs",
         abortOnFail: true,
       });
     }
-    if (data.wantUtils) {
+    if (data.wantStory) {
       actions.push({
         type: "add",
-        path: `${data.componentDir}/{{properCase name}}/{{properCase name}}.utilities.js`,
-        templateFile: "../templates/component.utilities.hbs",
-        abortOnFail: true,
-      });
-    }
-    if (data.wantTests && data.wantUtils) {
-      actions.push({
-        type: "add",
-        path: `${data.componentDir}/{{properCase name}}/__tests__/{{properCase name}}.utilities.spec.js`,
-        templateFile: "../templates/utilities.test.hbs",
+        path: `${data.componentDir}/{{properCase name}}/{{properCase name}}.stories.js`,
+        templateFile: "../templates/component.stories.hbs",
         abortOnFail: true,
       });
     }
