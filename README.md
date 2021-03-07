@@ -10,6 +10,10 @@ cd component-generator
 
 npm install
 
+# if you want the CLI to available anywhere
+# the parent directory has a reference of the current directory in this case the current project directory i.e. component-generator
+npm link .
+
 ```
 
 ## Usage
@@ -17,6 +21,12 @@ npm install
 ```bash
 # from the repo
 npm run generator
+
+# if you have installed globally
+generator
+
+# to pre-fill first prompt
+generator MyAwesomeButton
 
 ```
 
